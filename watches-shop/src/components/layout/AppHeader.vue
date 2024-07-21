@@ -1,6 +1,6 @@
 <script setup lang="ts">
+  import LanguageSelect from "@/components/ui/LanguageSelect.vue";
   const langs = [{title:"ENG"},{title:"RUS"}]
-
 </script>
 
 <template>
@@ -13,12 +13,11 @@
       <i class="ml-[130px] bi bi-cart3 cart-icon" style="font-size: 30px;"></i>
     </div>
     <div class="flex items-center">
+      <LanguageSelect/>
       <a class="ml-[30px] login">Log In</a>
     </div>
-  </header>
+    </header>
 </template>
-
-
 <style scoped>
 header {
   line-height: 1.5;
@@ -36,27 +35,8 @@ header .cart-icon {
   display: inline-block;
   transform: scaleX(-1);
 }
-.option{
-  color: #000;
-  font-weight: bold;
-  background-color: #9A836C;
-  text-align: center;
-}
-.option:hover{
-  background-color: #000 !important;
-}
-header select{
-  appearance: none;
-  outline: none;
-  background-color: transparent;
-  font-weight: bold;
-  color: #fff;
-  font-size: 18px;
-  width: 60px;
-}
 .login{
   font-size: 18px;
   font-weight: bold;
 }
-
 </style>
