@@ -1,34 +1,16 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+  import Header from './components/ui/AppHeader.vue'
 </script>
 
 <template>
-  <div>
-    <header>
-      <a>Times</a>
-      <a>Watches</a>
-      <a>About us</a>
-      <a>Store</a>
-      <i class="bi bi-cart3 cart-icon"></i>
-    </header>
+  <div class="container">
+    <Header/>
     <RouterView />
   </div>
 </template>
-
 <style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-header a {
-  text-transform: uppercase;
-  color: #fff;
-  font-family: 'Manrope', sans-serif;
-  font-size: 18px;
-  font-weight: 300;
-}
-header .cart-icon {
-  display: inline-block;
-  transform: scaleX(-1); 
+.container{
+  width: 1208px;
+  margin: 0 auto;
 }
 </style>
