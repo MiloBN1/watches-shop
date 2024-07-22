@@ -1,0 +1,22 @@
+[
+  {
+    "product": "Calibre9001.png",
+    "background": "Calibre9001Back.png",
+    "name": "Calibre9001"
+  },
+  {
+    "product": "ClassicWest.png",
+    "background": "ClassicWestBG.png",
+    "name": "ClassicWest"
+  },
+  {
+    "product": "NewModel2345.png",
+    "background": "NewModelBG.png",
+    "name": "NewModel2345"
+  },
+  {
+    "product": "SuperUser2001.png",
+    "background": "SuperUserBack.png",
+    "name": "SuperUser2001"
+  }
+]

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 
+import AppSlider from "@/components/ui/AppSlider.vue";
 </script>
 
 <template>
@@ -9,8 +10,17 @@
       <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now how nay cold real case. </p>
       <button>READ MORE <i class="bi bi-arrow-right"></i></button>
     </div>
-    <div>
+    <div class="right-side w-1/2">
+      <div>
+        <AppSlider/>
+      </div>
+      <div class="flex">
+        <h2>$215</h2>
+        <div></div>
+      </div>
+      <div>
 
+      </div>
     </div>
   </div>
 </template>
