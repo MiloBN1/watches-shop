@@ -1,11 +1,10 @@
 <script setup lang="ts">
 
+import MainContent from "@/components/layout/MainContent.vue";
 </script>
 
 <template>
-<div>
-  Home component works!!
-</div>
+<MainContent/>
 </template>
 
 <style scoped>

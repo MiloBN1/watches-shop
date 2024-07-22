@@ -1,6 +1,5 @@
 <script setup lang="ts">
   import LanguageSelect from "@/components/ui/LanguageSelect.vue";
-  const langs = [{title:"ENG"},{title:"RUS"}]
 </script>
 
 <template>
