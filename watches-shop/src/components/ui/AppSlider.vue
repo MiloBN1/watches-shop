@@ -18,33 +18,40 @@ import watches from '@/shared/json/watches.json';
 <template>
   <div class="product-wrapper">
     <v-carousel
+        style="width: 422px"
         interval="3000" @mouseenter="stopCycling()" @mouseleave="startCycling()"
         :cycle="cycling" v-model="activeId"
         :hide-delimiters="true"  :show-arrows="false">
       <v-carousel-item v-for="(item, index) in watches" :key="index" :src="`/images/elements/${item.product}`"></v-carousel-item>
     </v-carousel>
-    <template class="flex">
+    <template class="flex justify-between">
+      <div class="text-white">
+        $214
+      </div>
+      <div class="flex">
         <div class="indicator-wrapper"
              v-for="(indicator, index) in watches" :key="index"
              :class="{'active-indicator': activeId === index}">
           <div class="indicator" @click="setActiveId(index)">
-
           </div>
         </div>
+      </div>
+
     </template>
-    <div>{{activeId}}</div>
   </div>
 
 </template>
 
 <style scoped>
+  .product-wrapper{
+    width: 422px;
+  }
   .indicator{
     border-radius: 100%;
     background-color: #8D7966;
     width: 11px;
     height: 11px;
   }
-
   .indicator-wrapper{
     width: 17px;
     height: 17px;
