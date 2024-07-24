@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import watches from '../../../public/json/watches.json';
+import watches from '@/shared/json/watches.json';
   let activeId = ref(0);
   let cycling = ref(true);
 
