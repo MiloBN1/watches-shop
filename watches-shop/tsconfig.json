@@ -1,11 +1,15 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
+  "compilerOptions": {
+    "module": "ESNext", // Or "ES2020", "ES2022", "Node16", "NodeNext", "System"
+    "target": "ESNext", // Ensure the target is modern enough
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
     },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ]
+    "resolveJsonModule": true
+  },
+  "include": ["src/**/*", "vite.config.ts"], // Ensure your Vite config is included if using TypeScript for it
+  "exclude": ["node_modules"]
 }
