@@ -13,6 +13,7 @@ import watches from '@/shared/json/watches.json';
   function setActiveId(id:number){
     activeId.value = id;
   }
+
 </script>
 //
 <template>
@@ -26,7 +27,7 @@ import watches from '@/shared/json/watches.json';
     </v-carousel>
     <template class="flex justify-between">
       <div class="text-white">
-        $214
+        {{watches[activeId].price}}
       </div>
       <div class="flex">
         <div class="indicator-wrapper"
@@ -38,6 +39,13 @@ import watches from '@/shared/json/watches.json';
       </div>
 
     </template>
+    <div class="flex justify-between">
+      <h2 class="text-white font-bold" style="font-size: 23px">{{watches[activeId].name}}</h2>
+      <button class="bg-transparent text-white"
+              style="font-size: 30px">
+        <i class="bi bi-arrow-right"></i>
+      </button>
+    </div>
   </div>
 
 </template>

@@ -2,21 +2,25 @@
   {
     "product": "Calibre9001.png",
     "background": "Calibre9001Back.png",
-    "name": "Calibre9001"
+    "name": "Calibre9001",
+    "price": "$215"
   },
   {
     "product": "ClassicWest.png",
     "background": "ClassicWestBG.png",
-    "name": "ClassicWest"
+    "name": "ClassicWest",
+    "price": "$420"
   },
   {
     "product": "NewModel2345.png",
     "background": "NewModelBG.png",
-    "name": "NewModel2345"
+    "name": "NewModel2345",
+    "price": "$373"
   },
   {
     "product": "SuperUser2001.png",
     "background": "SuperUserBack.png",
-    "name": "SuperUser2001"
+    "name": "SuperUser2001",
+    "price": "$313"
   }
 ]
