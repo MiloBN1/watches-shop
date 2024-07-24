@@ -14,7 +14,7 @@ import watches from '../../../public/json/watches.json';
     activeId.value = id;
   }
 </script>
-
+//
 <template>
   <div class="product-wrapper">
     <v-carousel
