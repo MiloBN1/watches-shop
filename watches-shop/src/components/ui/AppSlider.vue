@@ -15,7 +15,7 @@ import watches from '@/shared/json/watches.json';
   }
 
   function toggleNext(){
-    if(activeId.value === watches.length){
+    if(activeId.value === watches.length - 1){
       activeId.value = 0;
       return ;
     }
