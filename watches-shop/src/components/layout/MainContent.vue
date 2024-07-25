@@ -8,7 +8,7 @@ import MainButton from "@/components/ui/MainButton.vue";
     <div class="left-side py-[140px] w-1/2">
       <h1>Discover <br/>Luxurious Watch <br/>Which You Will Love.<br/></h1>
       <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now how nay cold real case. </p>
-      <MainButton width="200px" height="70px" text="Read More"/>
+      <MainButton class="mt-[45px]" width="200px" height="70px" text="Read More"/>
     </div>
     <div class="right-side py-[140px] w-1/2 px-20 relative overflow-hidden">
       <div>
