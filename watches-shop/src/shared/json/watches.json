@@ -1,26 +1,51 @@
 [
   {
-    "product": "Calibre9001.png",
-    "background": "Calibre9001Back.png",
-    "name": "Calibre9001",
-    "price": "$215"
+    "img": "Calibre9001.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Calibre-9001",
+    "price": "$215",
+    "type": "trend"
   },
   {
-    "product": "ClassicWest.png",
-    "background": "ClassicWestBG.png",
-    "name": "ClassicWest",
-    "price": "$420"
+    "img": "SkyDweller-4000.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Sky Dweller-4000",
+    "price": "$2115",
+    "type": "men"
   },
   {
-    "product": "NewModel2345.png",
-    "background": "NewModelBG.png",
-    "name": "NewModel2345",
-    "price": "$373"
+    "img": "DayDate-820.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Day Date-820",
+    "price": "$1200",
+    "type": "women"
   },
   {
-    "product": "SuperUser2001.png",
-    "background": "SuperUserBack.png",
-    "name": "SuperUser2001",
-    "price": "$313"
+    "img": "DateJust-6500.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Date Just-6500",
+    "price": "$3000",
+    "type": "men"
+  },
+  {
+    "img": "SportsMaster-400.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Sports Master-400",
+    "price": "$600",
+    "type": "sport"
+  },
+  {
+    "img": "PearlMaster600.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Pearl Master-600",
+    "price": "$1000",
+    "type": "women"
+  },
+  {
+    "img": "JustSports200.png",
+    "text": "What looked like a small patch of purple grass, above five feet square wan.",
+    "title": "Just Sports-200",
+    "price": "$600",
+    "type": "sport"
   }
 ]

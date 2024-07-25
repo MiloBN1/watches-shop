@@ -1,10 +1,9 @@
 <script setup lang="ts">
-const props = defineProps(['width', 'height', 'text'])
-console.log(props)
+const props = defineProps(['width', 'height', 'text', 'focused'])
 </script>
 
 <template>
-  <button :style="`width: ${props.width}; height: ${props.height}`">{{ props.text }}</button>
+  <button :style="`width: ${props.width}; height: ${props.height}`" :class="{'focused':props.focused, 'hovered': !props.focused}">{{ props.text }}</button>
 </template>
 
 <style scoped>
@@ -14,7 +13,7 @@ button {
   border-image: linear-gradient(to right, #9A836C 0%, #B1A48F 100%) 1;
   color: #9A836C;
   font-size: 18px;
-  font-weight: bolder;
+  font-weight: 900;
   letter-spacing: 4px;
   position: relative;
   background: none;
@@ -25,7 +24,7 @@ button::before {
   content: "";
   width: 0;
   height: 100%;
-  background:linear-gradient(to right, #9A836C 0%, #B1A48F 100%);;
+  background:linear-gradient(to right, #9A836C 0%, #B1A48F 100%);
   position: absolute;
   left: 0;
   top: 0;
@@ -37,7 +36,12 @@ button:hover {
   color: #181818;
 }
 
-button:hover::before {
+.hovered:hover::before {
   width: 100%;
+}
+
+.focused {
+  color: #181818;
+  background:linear-gradient(to right, #9A836C 0%, #B1A48F 100%);
 }
 </style>

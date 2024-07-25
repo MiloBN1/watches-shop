@@ -17,7 +17,7 @@ import watches from '@/shared/json/feature-watches.json'
           {{item.text}}
         </v-card-text>
         <v-card-item class="px-[25px] ">
-          <MainButton width="100%" height="70px" text="View Details"/>
+          <MainButton width="100%" height="70px" text="View Details" class="text-uppercase"/>
         </v-card-item>
       </v-card>
     </div>
