@@ -14,13 +14,21 @@ import watches from '@/shared/json/watches.json';
     activeId.value = id;
   }
 
+  function toggleNext(){
+    if(activeId.value === watches.length){
+      activeId.value = 0;
+      return ;
+    }
+    activeId.value = activeId.value + 1;
+  }
+
 </script>
 //
 <template>
-  <div class="product-wrapper">
+  <div class="product-wrapper" @mouseenter="stopCycling()" @mouseleave="startCycling()">
     <v-carousel
         style="width: 422px"
-        interval="3000" @mouseenter="stopCycling()" @mouseleave="startCycling()"
+        interval="3000"
         :cycle="cycling" v-model="activeId"
         :hide-delimiters="true"  :show-arrows="false">
       <v-carousel-item v-for="(item, index) in watches" :key="index" :src="`/images/elements/${item.product}`"></v-carousel-item>
@@ -41,7 +49,7 @@ import watches from '@/shared/json/watches.json';
     </template>
     <div class="flex justify-between">
       <h2 class="text-white font-bold" style="font-size: 23px">{{watches[activeId].name}}</h2>
-      <button class="bg-transparent text-white"
+      <button @click="toggleNext()" class="bg-transparent text-white"
               style="font-size: 30px">
         <i class="bi bi-arrow-right"></i>
       </button>
