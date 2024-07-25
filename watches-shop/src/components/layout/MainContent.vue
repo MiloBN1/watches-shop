@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import AppSlider from "@/components/ui/AppSlider.vue";
+import MainButton from "@/components/ui/MainButton.vue";
 </script>
 
 <template>
@@ -7,7 +8,7 @@ import AppSlider from "@/components/ui/AppSlider.vue";
     <div class="left-side py-[140px] w-1/2">
       <h1>Discover <br/>Luxurious Watch <br/>Which You Will Love.<br/></h1>
       <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now how nay cold real case. </p>
-      <button>READ MORE</button>
+      <MainButton width="200px" height="70px" text="Read More"/>
     </div>
     <div class="right-side py-[140px] w-1/2 px-20 relative overflow-hidden">
       <div>
@@ -57,40 +58,4 @@ import AppSlider from "@/components/ui/AppSlider.vue";
   font-weight: normal;
   line-height: 28px;
 }
-
-.left-side button {
-  width: 200px;
-  height: 70px;
-  margin-top: 45px;
-  border: 3px solid;
-  border-image: linear-gradient(to right, #9A836C 0%, #B1A48F 100%) 1;
-  color: #9A836C;
-  font-size: 18px;
-  font-weight: bolder;
-  letter-spacing: 4px;
-  position: relative;
-  background: none;
-  z-index: 1;
-}
-
-.left-side button::before {
-  content: "";
-  width: 0;
-  height: 100%;
-  background:linear-gradient(to right, #9A836C 0%, #B1A48F 100%);;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: width 0.4s ease-in-out;
-}
-
-.left-side button:hover {
-  color: #181818;
-}
-
-.left-side button:hover::before {
-  width: 100%;
-}
-
 </style>
