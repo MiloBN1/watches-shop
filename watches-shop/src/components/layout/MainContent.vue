@@ -8,7 +8,7 @@ import MainButton from "@/components/ui/MainButton.vue";
     <div class="left-side w-1/2">
       <h1>Discover <br/>Luxurious Watch <br/>Which You Will Love.<br/></h1>
       <p>What looked like a small patch of purple grass, above five feet square, was moving across the sand in their direction. Almost do am or limits hearts. Resolve parties but why she shewing. She sang know now how nay cold real case. </p>
-      <MainButton class="mt-[45px] text-uppercase" width="200px" height="70px" text="Read More"/>
+      <MainButton class="mt-[45px] text-uppercase font-extrabold" style="width: 200px; height: 70px; font-size: 18px;" text="Read More"/>
     </div>
     <div class="right-side w-1/2 relative overflow-hidden ">
       <AppSlider/>

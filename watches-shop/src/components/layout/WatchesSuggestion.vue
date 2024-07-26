@@ -32,13 +32,13 @@
       <div v-for="(button, index) in buttons" :key="button.value">
         <MainButton
             @click="setActiveId(index); setFilter(button.value)"
-            width="200px" height="70px" :text="button.title" :focused="activeId === index"
-            class="text-uppercase"/>
+             :text="button.title" :focused="activeId === index"
+            class="text-uppercase filter-options"/>
       </div>
     </div>
     <div class="grid grid-cols-3 mt-[70px] gap-x-[19px] gap-y-[30px]" style="min-height: 600px">
-      <v-card max-height="552px" width="370px" color="#21242B" class="pb-[30px]" v-for="item in getFilteredWatches()" :key="item.img">
-        <v-img style="min-height: 286px" :src="`/images/watches-suggestion/${item.img}`"></v-img>
+      <v-card max-height="552px"  color="#21242B" class="pb-[30px] card" v-for="item in getFilteredWatches()" :key="item.img">
+        <v-img cover style="min-height: 286px" :src="`/images/watches-suggestion/${item.img}`"></v-img>
         <div class="px-[25px] mt-[23px] flex justify-between">
           <h2 class="text-capitalize font-bold">{{ item.title }}</h2>
           <span>{{item.price}}</span>
@@ -48,8 +48,8 @@
         </v-card-text>
         <v-card-item class="px-[25px] ">
           <div class="flex justify-between">
-            <MainButton width="154px" height="70px" text="Buy Now" :focused="true" class="text-uppercase"/>
-            <MainButton width="154px" height="70px" text="Add Cart" class="text-uppercase"/>
+            <MainButton text="Buy Now" :focused="true" class="text-uppercase suggest-btn"/>
+            <MainButton text="Add Cart" class="text-uppercase suggest-btn"/>
           </div>
         </v-card-item>
       </v-card>
@@ -73,4 +73,33 @@
     font-weight: bold;
     font-size: 18px;
   }
+  .suggest-btn{
+    width: 154px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .filter-options{
+    width: 200px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: 900;
+  }
+  .card{
+    width: 370px;
+  }
+  @media screen and (max-width: 1540px) {
+    .suggest-btn{
+      width: 124px;
+      font-size: 16px;
+    }
+    .filter-options{
+      width: 180px;
+      font-size: 14px;
+    }
+    .card{
+      width: 320px;
+    }
+  }
+
 </style>
