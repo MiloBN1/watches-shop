@@ -6,9 +6,9 @@
   <header class="flex items-center justify-between py-10 container-fluid">
     <div class="flex items-center">
       <a style="font-size: 24px; font-weight:800">Times</a>
-      <router-link to="/watches"><a class="ml-[64px]">Watches</a></router-link>
-      <router-link to="/about"><a class="ml-[64px]">About us</a></router-link>
-      <router-link to="/store"> <a class="ml-[64px]">Store</a></router-link>
+      <router-link to="/"><a class="ml-[64px]">Watches</a></router-link>
+      <router-link to="/"><a class="ml-[64px]">About us</a></router-link>
+      <router-link to="/"> <a class="ml-[64px]">Store</a></router-link>
       <i class="ml-[130px] bi bi-cart3 cart-icon" style="font-size: 30px;"></i>
     </div>
     <div class="flex items-center">

@@ -18,3 +18,26 @@ body{
   width: 1208px;
   margin: 0 auto;
 }
+
+@media screen and (max-width: 1540px) {
+  .container-fluid{
+    width: 1008px;
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .container-fluid{
+    width: 908px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .container-fluid{
+    width: 708px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container-fluid{
+    width: 325px;
+  }
+}
