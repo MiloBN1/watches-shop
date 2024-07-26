@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <header class="flex items-center justify-between py-10">
+  <header class="flex items-center justify-between py-10 container-fluid">
     <div class="flex items-center">
       <a style="font-size: 24px; font-weight:800">Times</a>
       <router-link to="/watches"><a class="ml-[64px]">Watches</a></router-link>

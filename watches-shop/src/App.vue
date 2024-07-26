@@ -1,16 +1,15 @@
 <script setup lang="ts">
   import Header from './components/layout/AppHeader.vue'
+  import AppFooter from "@/components/layout/AppFooter.vue";
 </script>
 
 <template>
-  <div class="container">
-    <Header/>
+  <Header/>
+  <div class="container-fluid">
     <RouterView />
   </div>
+  <AppFooter/>
 </template>
 <style scoped>
-.container{
-  width: 1208px;
-  margin: 0 auto;
-}
+
 </style>

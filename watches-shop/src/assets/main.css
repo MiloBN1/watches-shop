@@ -14,3 +14,7 @@ body{
 .font-manrope{
   font-family: 'Manrope', sans-serif;
 }
+.container-fluid{
+  width: 1208px;
+  margin: 0 auto;
+}
