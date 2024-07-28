@@ -46,7 +46,7 @@ function toggleNext() {
     </v-carousel>
     <template class="flex justify-between mt-5">
       <div class="text-white">
-        {{ watches[activeId].price }}
+        ${{ watches[activeId].price }}
       </div>
       <div class="flex">
         <div

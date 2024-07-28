@@ -4,7 +4,9 @@
 </script>
 
 <template>
-  <Header/>
+  <div class="relative" style="height: 100px">
+    <Header/>
+  </div>
   <div class="container-fluid">
     <RouterView />
   </div>

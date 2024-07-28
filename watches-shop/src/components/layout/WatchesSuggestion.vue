@@ -2,12 +2,20 @@
   import MainButton from "@/components/ui/MainButton.vue";
   import jsonWatches from "@/shared/json/watches.json";
   import {ref} from "vue";
+  import { basketStore } from "@/stores/basket.store.js"
+
+  const basket = basketStore()
   let activeId = ref(0);
   const buttons = [{title:"All Times", value:"all"},{title:"Men Times", value:"men"},{title:"Women Times", value:"women"},{title:"Sports Times", value:"sport"},{title:"Trend Times", value:"trend"}]
   let watches = ref(jsonWatches)
   let filter = ref('all')
+
   function setActiveId(value:number){
     activeId.value = value;
+  }
+
+  function addToCart(product:any){
+    basket.addToCart(product)
   }
 
   function getFilteredWatches(){
@@ -41,7 +49,7 @@
         <v-img cover style="min-height: 286px" :src="`/images/watches-suggestion/${item.img}`"></v-img>
         <div class="px-[25px] mt-[23px] flex justify-between">
           <h2 class="text-capitalize font-bold">{{ item.title }}</h2>
-          <span>{{item.price}}</span>
+          <span>${{item.price}}</span>
         </div>
         <v-card-text class="px-[25px] mt-[12px] text-[#B1B1B1]" style="line-height:28px; font-size: 16px">
           {{item.text}}
@@ -49,7 +57,7 @@
         <v-card-item class="px-[25px] ">
           <div class="flex justify-between">
             <MainButton text="Buy Now" :focused="true" class="text-uppercase suggest-btn"/>
-            <MainButton text="Add Cart" class="text-uppercase suggest-btn"/>
+            <MainButton text="Add Cart" class="text-uppercase suggest-btn" @click="addToCart(item)"/>
           </div>
         </v-card-item>
       </v-card>

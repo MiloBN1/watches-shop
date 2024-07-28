@@ -3,49 +3,68 @@
     "img": "Calibre9001.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Calibre-9001",
-    "price": "$215",
-    "type": "trend"
+    "price": 215,
+    "type": "trend",
+    "id": 1,
+    "quantity": 0
+
   },
   {
     "img": "SkyDweller-4000.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Sky Dweller-4000",
-    "price": "$2115",
-    "type": "men"
+    "price": 2115,
+    "type": "men",
+    "id": 2,
+    "quantity": 0
+
   },
   {
     "img": "DayDate-820.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Day Date-820",
-    "price": "$1200",
-    "type": "women"
+    "price": 1200,
+    "type": "women",
+    "id": 3,
+    "quantity": 0
+
   },
   {
     "img": "DateJust-6500.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Date Just-6500",
-    "price": "$3000",
-    "type": "men"
+    "price": 3000,
+    "type": "men",
+    "id": 4,
+    "quantity": 0
+
   },
   {
     "img": "SportsMaster-400.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Sports Master-400",
-    "price": "$600",
-    "type": "sport"
+    "price": 600,
+    "type": "sport",
+    "id": 5,
+    "quantity": 0
+
   },
   {
     "img": "PearlMaster600.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Pearl Master-600",
-    "price": "$1000",
-    "type": "women"
+    "price": 1000,
+    "type": "women",
+    "id": 6,
+    "quantity": 0
   },
   {
     "img": "JustSports200.png",
     "text": "What looked like a small patch of purple grass, above five feet square wan.",
     "title": "Just Sports-200",
-    "price": "$600",
-    "type": "sport"
+    "price": 600,
+    "type": "sport",
+    "id": 7,
+    "quantity": 0
   }
 ]
