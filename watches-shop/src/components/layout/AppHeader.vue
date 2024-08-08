@@ -10,12 +10,12 @@
   <div class="fixed left-0 right-0 top-0 bg-[#21242b] z-50">
     <header class="flex items-center justify-between container-fluid">
       <div class="flex items-center">
-        <a style="font-size: 24px; font-weight:800">Times</a>
+        <router-link to="/"><a style="font-size: 24px; font-weight:800">Times</a></router-link>
         <router-link to="/"><a class="ml-[64px]">Watches</a></router-link>
         <router-link to="/"><a class="ml-[64px]">About us</a></router-link>
         <router-link to="/"> <a class="ml-[64px]">Store</a></router-link>
         <div class="ml-[130px] relative">
-          <i class="bi bi-cart3 cart-icon" style="font-size: 30px;"></i>
+          <router-link to="/cart"><i class="bi bi-cart3 cart-icon" style="font-size: 30px;"></i></router-link>
           <span style="font-size: 15px"
              class="top-0 -left-2 absolute rounded-full bg-[#9A836C] w-[19px] h-[19px] flex justify-center items-center"
              :class="{'more-9':basketCount > 9}"
