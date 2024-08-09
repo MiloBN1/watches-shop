@@ -1,6 +1,18 @@
 <script setup lang="ts">
-
+import { basketStore } from "@/stores/basket.store.js";
+import {computed} from "vue";
+const basket = basketStore();
+const basketItems = computed(() => basket.basket);
 import MainButton from "@/components/ui/MainButton.vue";
+let cartTotal = computed(() => basket.cartTotal);
+function addQuantity(product:any){
+  basket.addQuantity(product)
+}
+
+function reduceQuantity(product:any){
+  basket.reduceQuantity(product)
+}
+
 </script>
 
 <template>
@@ -23,22 +35,22 @@ import MainButton from "@/components/ui/MainButton.vue";
       </tr>
       </thead>
       <tbody>
-        <tr style="border-bottom: 1px solid #9A836C;">
+        <tr v-for="item in basketItems" :key="item.id" style="border-bottom: 1px solid #9A836C;">
           <td>
             <div class="flex items-center">
               <div style="max-width: 177px;">
-                <img src="/images/watches-suggestion/Calibre9001.png" alt="..">
+                <img :src="`/images/watches-suggestion/${item.img}`" alt="..">
               </div>
-              <span class="ml-[30px]">Calibre-9001</span>
+              <span class="ml-[30px]">{{item.title}}</span>
             </div>
           </td>
-          <td>$50</td>
+          <td>${{item.price}}</td>
           <td>
-            <button class="mr-[15px] text-[#9A836C]" style="font-size: 20px">-</button>
-            <span>1</span>
-            <button class="ml-[15px] text-[#9A836C]" style="font-size: 20px">+</button>
+            <button class="mr-[15px] text-[#9A836C]" style="font-size: 20px" @click="reduceQuantity(item)">-</button>
+            <span>{{ item.quantity }}</span>
+            <button class="ml-[15px] text-[#9A836C]" style="font-size: 20px" @click="addQuantity(item)">+</button>
           </td>
-          <td>$50</td>
+          <td>${{ item.price * item.quantity }}</td>
         </tr>
       </tbody>
     </table>
@@ -48,7 +60,7 @@ import MainButton from "@/components/ui/MainButton.vue";
         <MainButton class="continue font-extrabold text-uppercase ml-10" text="Continue shopping"></MainButton>
       </div>
       <div class="mr-20">
-        <span>SUB TOTAL: <span class="text-white ml-3">$50</span></span>
+        <span>SUB TOTAL: <span class="text-white ml-3">${{cartTotal}}</span></span>
       </div>
     </div>
   </div>
