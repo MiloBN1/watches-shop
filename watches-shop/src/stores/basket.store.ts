@@ -15,9 +15,9 @@ export const basketStore = defineStore('basket', {
         basket: [] as WatchModel[]
     }),
     actions: {
-        addToCart(product: WatchModel) {
+        addToCart(product: WatchModel, quantity:number) {
             const watches = this.basket.find((item) => item.id === product.id);
-            if (!watches) this.basket.push({ ...product, quantity: 1 });
+            if (!watches) this.basket.push({ ...product, quantity: quantity });
         },
         addQuantity(product: WatchModel) {
             const watchIndex = this.basket.findIndex((item) => item.id === product.id);

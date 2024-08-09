@@ -2,20 +2,26 @@
   import MainButton from "@/components/ui/MainButton.vue";
   import jsonWatches from "@/shared/json/watches.json";
   import {ref} from "vue";
-  import { basketStore } from "@/stores/basket.store.js"
+  import AddCartModal from "@/components/ui/AddCartModal.vue";
+  import {modalService} from "@/services/modalControl.service";
 
-  const basket = basketStore()
   let activeId = ref(0);
   const buttons = [{title:"All Times", value:"all"},{title:"Men Times", value:"men"},{title:"Women Times", value:"women"},{title:"Sports Times", value:"sport"},{title:"Trend Times", value:"trend"}]
   let watches = ref(jsonWatches)
   let filter = ref('all')
+  let selectedWatch = ref(null)
 
   function setActiveId(value:number){
     activeId.value = value;
   }
 
-  function addToCart(product:any){
-    basket.addToCart(product)
+  function toggleAddCart(product:any){
+    selectedWatch.value = product;
+    openModal();
+  }
+
+  function openModal(){
+    modalService.open()
   }
 
   function getFilteredWatches(){
@@ -55,14 +61,15 @@
           {{item.text}}
         </v-card-text>
         <v-card-item class="px-[25px] ">
-          <div class="flex justify-between">
-            <MainButton text="Buy Now" :focused="true" class="text-uppercase suggest-btn"/>
-            <MainButton text="Add Cart" class="text-uppercase suggest-btn" @click="addToCart(item)"/>
+          <div class="w-full">
+            <MainButton text="Add To Cart" :focused="true" class="text-uppercase suggest-btn w-full" @click="toggleAddCart(item)"/>
           </div>
         </v-card-item>
       </v-card>
     </div>
   </div>
+
+  <AddCartModal :watch-item="selectedWatch" v-if="modalService.getState().isOpen"></AddCartModal>
 </template>
 
 <style scoped>
@@ -82,7 +89,6 @@
     font-size: 18px;
   }
   .suggest-btn{
-    width: 154px;
     height: 60px;
     font-size: 18px;
     font-weight: 900;
