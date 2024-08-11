@@ -4,17 +4,17 @@ const basket = basketStore();
 import MainButton from "@/components/ui/MainButton.vue";
 import {modalService} from "@/services/modalControl.service";
 import {onUnmounted, ref} from "vue";
-import SuccessIcon from "@/components/icons/SuccessIcon.vue";
+import { globalAlertStore } from "@/stores/globalAlert.store";
+const globAlert = globalAlertStore();
 const props = defineProps(['watchItem'])
 let quantity = ref(1)
-let statusVisible = ref(false)
 
 function addQuantity(){
   quantity.value++;
 }
 
 function showStatus(){
-  statusVisible.value = true;
+  globAlert.setSuccess('Successfully added to cart');
 }
 
 function reduceQuantity(){
@@ -28,7 +28,7 @@ function toggleCancel(){
 function addToCart(product:any){
   basket.addToCart(product, quantity.value);
   showStatus();
-  setTimeout(modalService.close, 1650)
+  modalService.close()
 }
 
 onUnmounted(()=>quantity.value = 0)
@@ -37,7 +37,7 @@ onUnmounted(()=>quantity.value = 0)
 
 <template>
   <div class="fixed w-full inset-0 bg-[#0004] flex items-center">
-    <div class="container-fluid font-manrope py-10 rounded bg-[#21242b]" v-if="!statusVisible">
+    <div class="container-fluid font-manrope py-10 rounded bg-[#21242b]">
       <table class="w-full">
       <thead>
       <tr style="border-bottom: 1px solid #9A836C;">
@@ -85,14 +85,14 @@ onUnmounted(()=>quantity.value = 0)
         <span class="ml-5 text-red-600" v-if="basket.findBasketItemIndex(props.watchItem) !== -1">Item already exists in basket</span>
     </div>
     </div>
-    <div class="container-fluid py-10 rounded bg-[#21242b] font-manrope" v-if="statusVisible">
-      <div class="flex flex-col justify-center items-center">
-        <SuccessIcon/>
-        <p class="text-[#9A836C] mt-5 mr-2" style="font-size: 20px">
-          Success
-        </p>
-      </div>
-    </div>
+<!--    <div class="container-fluid py-10 rounded bg-[#21242b] font-manrope" v-if="statusVisible">-->
+<!--      <div class="flex flex-col justify-center items-center">-->
+<!--        <SuccessIcon/>-->
+<!--        <p class="text-[#9A836C] mt-5 mr-2" style="font-size: 20px">-->
+<!--          Success-->
+<!--        </p>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
