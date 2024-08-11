@@ -42,4 +42,8 @@ button:hover {
   color: #181818;
   background:linear-gradient(to right, #9A836C 0%, #B1A48F 100%);
 }
+
+button:disabled{
+  opacity: .6;
+}
 </style>

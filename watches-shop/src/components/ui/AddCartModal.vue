@@ -4,11 +4,17 @@ const basket = basketStore();
 import MainButton from "@/components/ui/MainButton.vue";
 import {modalService} from "@/services/modalControl.service";
 import {onUnmounted, ref} from "vue";
+import SuccessIcon from "@/components/icons/SuccessIcon.vue";
 const props = defineProps(['watchItem'])
 let quantity = ref(1)
+let statusVisible = ref(false)
 
 function addQuantity(){
   quantity.value++;
+}
+
+function showStatus(){
+  statusVisible.value = true;
 }
 
 function reduceQuantity(){
@@ -21,7 +27,8 @@ function toggleCancel(){
 
 function addToCart(product:any){
   basket.addToCart(product, quantity.value);
-  modalService.close()
+  showStatus();
+  setTimeout(modalService.close, 1650)
 }
 
 onUnmounted(()=>quantity.value = 0)
@@ -30,8 +37,8 @@ onUnmounted(()=>quantity.value = 0)
 
 <template>
   <div class="fixed w-full inset-0 bg-[#0004] flex items-center">
-  <div class="container-fluid font-manrope py-10 rounded bg-[#21242b]" >
-    <table class="w-full">
+    <div class="container-fluid font-manrope py-10 rounded bg-[#21242b]" v-if="!statusVisible">
+      <table class="w-full">
       <thead>
       <tr style="border-bottom: 1px solid #9A836C;">
         <th>
@@ -68,11 +75,24 @@ onUnmounted(()=>quantity.value = 0)
       </tr>
       </tbody>
     </table>
-    <div class="mt-10 ml-[10px]">
+      <div class="mt-10 ml-[10px]">
         <MainButton class="cancel font-extrabold text-uppercase " text="Cancel" @click="toggleCancel()"></MainButton>
-        <MainButton class="add font-extrabold text-uppercase ml-10" focused="true" text="Add" @click="addToCart(props.watchItem)"></MainButton>
+        <MainButton class="add font-extrabold text-uppercase ml-10"
+                    focused="true" text="Add"
+                    @click="addToCart(props.watchItem)"
+                    id="addBtn"
+                    :disabled="basket.findBasketItemIndex(props.watchItem) != -1"></MainButton>
+        <span class="ml-5 text-red-600" v-if="basket.findBasketItemIndex(props.watchItem) !== -1">Item already exists in basket</span>
     </div>
-  </div>
+    </div>
+    <div class="container-fluid py-10 rounded bg-[#21242b] font-manrope" v-if="statusVisible">
+      <div class="flex flex-col justify-center items-center">
+        <SuccessIcon/>
+        <p class="text-[#9A836C] mt-5 mr-2" style="font-size: 20px">
+          Success
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 

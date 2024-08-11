@@ -20,13 +20,16 @@ export const basketStore = defineStore('basket', {
             if (!watches) this.basket.push({ ...product, quantity: quantity });
         },
         addQuantity(product: WatchModel) {
-            const watchIndex = this.basket.findIndex((item) => item.id === product.id);
+            const watchIndex = this.findBasketItemIndex(product)
             if (watchIndex != -1) this.basket[watchIndex].quantity++;
         },
         reduceQuantity(product: WatchModel) {
-            const watchIndex = this.basket.findIndex((item) => item.id === product.id);
+            const watchIndex = this.findBasketItemIndex(product)
             if(product.quantity == 1) return ;
             if (watchIndex != -1) this.basket[watchIndex].quantity--;
+        },
+        findBasketItemIndex(product: WatchModel) {
+            return this.basket.findIndex((item) => item.id === product.id);
         },
         removeFromCart(productId:number) {
             this.basket = this.basket.filter(item => item.id !== productId);
