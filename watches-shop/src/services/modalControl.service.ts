@@ -5,7 +5,7 @@ const state = reactive({
 });
 
 export const modalService = {
-    open(component:any, props = {}) {
+    open() {
         state.isOpen = true;
     },
     close() {
