@@ -2,7 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "watches-server/src/main.ts",
+      "src": "watches-server/package.json",
       "use": "@vercel/node"
     }
   ],
