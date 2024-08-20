@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/server/watches-server/dist/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/watches-shop/$1"
+    }
+  ],
+  "redirects": [],
+  "headers": [],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
