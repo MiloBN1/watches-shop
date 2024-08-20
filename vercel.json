@@ -1,16 +1,19 @@
 {
-  "rewrites": [
+  "version": 2,
+  "builds": [
     {
-      "source": "/api/(.*)",
-      "destination": "/server/watches-server/dist/main.js"
-    },
-    {
-      "source": "/(.*)",
-      "destination": "/watches-shop/$1"
+      "src": "server/watches-server/dist/main.js",
+      "use": "@vercel/node"
     }
   ],
-  "redirects": [],
-  "headers": [],
-  "cleanUrls": true,
-  "trailingSlash": false
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "server/watches-server/dist/main.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "watches-shop/$1"
+    }
+  ]
 }
