@@ -1,7 +1,19 @@
 <script setup lang="ts">
   import LanguageSelect from "@/components/ui/LanguageSelect.vue";
   import { basketStore } from "@/stores/basket.store.js";
-  import {computed} from "vue";
+  import {computed, onMounted} from "vue";
+  import axios from 'axios'
+
+  function getData(){
+    axios.get('https://watches-shop-11.vercel.app/api/hello').then((res)=>{
+      console.log(res.data)
+    })
+  }
+
+  onMounted(()=>{
+    getData();
+  })
+
   const basket = basketStore();
   const basketCount = computed(() => basket.basket.length);
 </script>
