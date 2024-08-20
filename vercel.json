@@ -4,16 +4,20 @@
     {
       "src": "watches-server/package.json",
       "use": "@vercel/node"
+    },
+    {
+      "src": "watches-shop/package.json",
+      "use": "@vercel/static-build"
     }
   ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/watches-server/src/main.ts"
+      "dest": "watches-server/dist/main.js"
     },
     {
       "src": "/(.*)",
-      "dest": "/watches-shop/$1"
+      "dest": "watches-shop/$1"
     }
   ]
 }
