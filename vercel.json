@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/server/watches-server/dist/$1"
+      "destination": "/server/watches-server/dist/main.js"
     },
     {
       "source": "/(.*)",
