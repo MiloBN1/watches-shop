@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/watches-server/dist/main.js"
+      "dest": "/watches-server/src/main.ts"
     },
     {
       "src": "/(.*)",
