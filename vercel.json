@@ -1,19 +1,19 @@
 {
   "version": 2,
+  "builds": [
+    {
+      "src": "watches-server/dist/main.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "watches-server/src/main.ts"
+      "dest": "watches-server/dist/main.js"
     },
     {
       "src": "/(.*)",
       "dest": "watches-shop/$1"
-    }
-  ],
-  "builds": [
-    {
-      "src": "watches-server/src/main.ts",
-      "use": "@vercel/node"
     }
   ]
 }
