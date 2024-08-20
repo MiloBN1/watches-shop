@@ -3,7 +3,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "server/watches-server/src/main.ts"
+      "dest": "watches-server/src/main.ts"
     },
     {
       "src": "/(.*)",
@@ -12,7 +12,7 @@
   ],
   "builds": [
     {
-      "src": "server/watches-server/src/main.ts",
+      "src": "watches-server/src/main.ts",
       "use": "@vercel/node"
     }
   ]
